@@ -1,0 +1,10 @@
+g = Graphics()
+g.axes(False)
+g += line([(0,0), [1,1], (0,1)])
+g1 = Graphics()
+c = circle((1,1), 1, rgbcolor=(1,0,0))
+g1 += c
+type(g+c)
+type(c)
+a = animate([g,g1,g,g1,g+g1,g,g1])
+a.show(delay=20)
