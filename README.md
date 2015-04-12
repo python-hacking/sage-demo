@@ -16,3 +16,9 @@ Source code in graph.sage.
 Illustrates path search from upper-left to bottom-right corner of the maze (using DFS algorithm).
 
 Source code in animation-maze.sage.
+
+
+**3.1**: [here](https://cloud.sagemath.com/projects/9ed34fc6-7526-4c0d-9d0d-67a3d7e0d27e/files/random-graph-bfs.sagews).
+
+BFS. Same as 2.1 but runs on interactively generated random graphs with specified densities.
+Source code in interact_graph.sage.
