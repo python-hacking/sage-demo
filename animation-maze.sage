@@ -19,33 +19,38 @@ def neighbours(i, j):
     if valid(i, j + 1): ans += [(i, j + 1)]
     return ans
 
-def dfs(g, i, j, visited, animation):
-    print i, j
-    if (lab_h - 1, lab_w - 1) in visited: return
-    g += square(i, j, 'pink')
-    animation += [g]
+def dfs(i, j, visited, animation):
+    global g
     visited.add((i, j))
     if (i, j) == (lab_h - 1, lab_w - 1):
         animation += [g + square(i, j, 'red')]
+    if (lab_h - 1, lab_w - 1) in visited: return
+    g += square(i, j, 'pink')
+    animation += [g]
     for ii,jj in neighbours(i, j):
         if lab[ii][jj] == "." and not (ii, jj) in visited:
-            dfs(g, ii, jj, visited, animation)
+            dfs(ii, jj, visited, animation)
 
 inp = open(sys.argv[1]) if len(sys.argv) > 1 else sys.stdin
 g = Graphics()
-g.axes(False)
 line_no = 0
 lab = []
 for line in inp:
     lab += [line[:-1]]
-    line_no += 1
     for col_no in range(len(line) - 1):
         if line[col_no] != '.':
             g += square(line_no, col_no, 'gray')
+    line_no += 1
 
 lab_h = len(lab)
 lab_w = len(lab[0])
 frames = [g]
 
-dfs(g, 0, 0, set(), frames)
-#animate(frames).show(delay=66)
+dfs(0, 0, set(), frames)
+for f in frames:
+    f.axes(False)
+    f.xmin(0)
+    f.ymax(0)
+    f.xmax(lab_w)
+    f.ymin(-lab_h)
+animate(frames).show(delay=66)
