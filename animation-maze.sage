@@ -20,8 +20,10 @@ def neighbours(i, j):
     return ans
 
 def dfs(g, i, j, visited, animation):
+    print i, j
     if (lab_h - 1, lab_w - 1) in visited: return
-    animation += [g + square(i, j, 'pink')]
+    g += square(i, j, 'pink')
+    animation += [g]
     visited.add((i, j))
     if (i, j) == (lab_h - 1, lab_w - 1):
         animation += [g + square(i, j, 'red')]
@@ -44,5 +46,6 @@ for line in inp:
 lab_h = len(lab)
 lab_w = len(lab[0])
 frames = [g]
+
 dfs(g, 0, 0, set(), frames)
-animate(frames).show(delay=66)
+#animate(frames).show(delay=66)
