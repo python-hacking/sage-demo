@@ -21,4 +21,11 @@ Source code in animation-maze.sage.
 **3.1**: [here](https://cloud.sagemath.com/projects/9ed34fc6-7526-4c0d-9d0d-67a3d7e0d27e/files/random-graph-bfs.sagews).
 
 BFS. Same as 2.1 but runs on interactively generated random graphs with specified densities.
-Source code in interact_graph.sage.
+
+Source code in interact\_graph.sage.
+
+**3.2**: [here](https://cloud.sagemath.com/projects/9ed34fc6-7526-4c0d-9d0d-67a3d7e0d27e/files/random-maze-dfs.sagews).
+
+DFS over a randomly generated maze. Same as 2.2, but has interactive elements.
+
+Source code in interact\_maze.sage.
