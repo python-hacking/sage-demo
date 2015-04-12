@@ -34,12 +34,8 @@ def valid(i, j):
     return i >= 0 and j >= 0 and i < lab_h and j < lab_w
 
 def neighbours(i, j):
-    ans = []
-    if valid(i - 1, j): ans += [(i - 1, j)]
-    if valid(i + 1, j): ans += [(i + 1, j)]
-    if valid(i, j - 1): ans += [(i, j - 1)]
-    if valid(i, j + 1): ans += [(i, j + 1)]
-    return ans
+    delta = [(-1, 0), (+1, 0), (0, -1), (0, +1)]
+    return [(i+di, j+dj) for di,dj in delta if valid(i+di, j+dj)]
 
 def dfs(lab, i, j, dest, visited, animation):
     global g
