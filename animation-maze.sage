@@ -53,4 +53,4 @@ for f in frames:
     f.ymax(0)
     f.xmax(lab_w)
     f.ymin(-lab_h)
-animate(frames).show(delay=66)
+animate(frames).show(delay=20)
