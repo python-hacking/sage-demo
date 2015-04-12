@@ -6,8 +6,8 @@ def my_plot(graph, done, queued = [], cur_path = [], vert = None):
                      'gray': done,
                      'yellow': set(queued) - s - set(done),
                      'pink': s}
-    edge_colors = {'black' : set(g.edges(false)) - set(cur_path), 'blue': cur_path}
-    plot = g.plot(layout="circular", vertex_colors=vertex_colors, edge_colors=edge_colors)
+    edge_colors = {'black' : set(graph.edges(false)) - set(cur_path), 'blue': cur_path}
+    plot = graph.plot(layout="circular", vertex_colors=vertex_colors, edge_colors=edge_colors)
     return plot
 
 def bfs(graph, frm, to):
